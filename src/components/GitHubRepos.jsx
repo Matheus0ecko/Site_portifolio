@@ -85,13 +85,14 @@ export default function GitHubRepos() {
 
       {state === "ok" && (
         <div className="grid md:grid-cols-2 gap-5">
-          {repos.map((r) => (
+          {repos.map((r, i) => (
             <a
               key={r.id}
               href={r.html_url}
               target="_blank"
               rel="noreferrer"
-              className="reveal group rounded-xl border border-border bg-surface p-6 hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
+              style={{ animationDelay: `${i * 0.08}s`, opacity: 0 }}
+              className="animate-fade-up group rounded-xl border border-border bg-surface p-6 hover:border-accent/50 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-2 font-display font-semibold">
